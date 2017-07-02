@@ -1,0 +1,19 @@
+sudo service mysqld start
+mysql -u root
+
+create database db1;
+
+use db1;
+
+create table company
+(
+id int,
+name varchar(20),
+location varchar(20)
+);
+
+
+solution :
+for UPSERT OPERATION
+
+ sqoop export --connect jdbc:mysql://localhost/DBNAME -username root -password root --export-dir /input/abc --table test --fields-terminated-by "," --update-key id --update mode allowinsert
